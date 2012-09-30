@@ -1,0 +1,21 @@
+{
+    "hash": "674bd26c689d07e5fab4fcd374444e7f",
+    "packages": [
+        {
+            "package": "breerly/zf1",
+            "version": "1.11.11"
+        },
+        {
+            "package": "tcpdf/tcpdf",
+            "version": "5.9.176"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ]
+}

@@ -1,0 +1,16 @@
+<div class="colElem">
+    <?php echo $this->formText("addresses[$this->partialCounter][id]", $this->id, array('class' => 'revertWhileRemoved', 'style' => 'display:none;')); ?>
+    <div>
+        <label>Town</label>
+        <?php echo $this->formText("addresses[$this->partialCounter][town]", $this->town, array('class' => 'autocompleteField')); ?>
+    </div>
+    <div>
+        <label>Street</label>
+        <?php echo $this->formText("addresses[$this->partialCounter][street]", $this->street, array()); ?>
+    </div>
+    <div>
+        <label>Zipcode</label>
+        <?php echo $this->formText("addresses[$this->partialCounter][zipcode]", $this->zipcode, array()); ?>
+    </div>
+    <img class="delButton wR" style="display:none;" src="<?php echo $this->baseurl() . '/images/delete.gif' ?>"/>
+</div>

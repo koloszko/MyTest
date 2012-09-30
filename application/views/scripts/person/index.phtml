@@ -1,0 +1,18 @@
+<p><a href="person/add">Add new person</a></p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>&nbsp;</th>
+    </tr>
+    <?php foreach ($this->persons as $person) : ?>
+        <tr>
+            <td><?php echo $this->escape($person->name); ?></td>
+            <td><?php echo $this->escape($person->surname); ?></td>
+            <td>
+                <a href="person/edit/id/<?php echo $this->escape($person->id); ?>">Edit</a>
+                <a href="person/delete/id/<?php echo $this->escape($person->id); ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>

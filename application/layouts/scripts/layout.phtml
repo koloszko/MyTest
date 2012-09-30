@@ -1,0 +1,29 @@
+<?php
+$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+$this->headTitle()->setSeparator(' - ');
+$this->headTitle('Zend Framework Tutorial');
+echo $this->doctype();
+?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headTitle(); ?>
+        <?php echo $this->headLink()->prependStylesheet($this->baseurl() . '/css/site.css'); ?>
+        <script type="text/javascript">
+            var BASE_URL = '<?php echo $this->baseurl() ?>'
+        </script>
+        <?php
+        echo $this->headScript()->prependFile($this->baseurl() . '/js/jquery-1.6.2.min.js', 'text/javascript');
+        echo $this->headScript()->appendFile($this->baseurl() . '/js/jquery-ui-1.8.16.custom.min.js', 'text/javascript');
+        echo $this->headScript()->appendFile($this->baseurl() . '/js/scripts.js', 'text/javascript');
+        ?>
+    </head>
+    <body>
+        <div style="float: right">
+            <?php echo $this->loggedInUser() ?>
+        </div>    
+        <div id="content">
+            <h1><?php echo $this->escape($this->title); ?></h1>
+            <?php echo $this->layout()->content; ?>
+        </div>
+    </body>

@@ -1,0 +1,83 @@
+<?php
+if ($this->mode == ADD_MODE) {
+    $this->title = "Add new person";
+    $this->action = 'add';
+} elseif ($this->mode == Constants::UPDATE_MODE) {
+    $this->title = "Update new person";
+    $this->action = 'edit';
+}
+$this->headTitle($this->title);
+?>
+
+<script type="text/javascript">
+ 
+    $(document).ready(function() {
+        initializeTownsAutocomplete("input.autocompleteField");
+        
+        $("fieldset.addresses").dynamicCollection({			
+            postAddFunction : function(elem) {
+                var autoCompleteSelector = "input.autocompleteField";
+                /* destroy autocompletes (but not for just created input, because it does not exist) */
+                $('div.colElem').not($(elem).find(autoCompleteSelector)).autocomplete("destroy");
+                initializeTownsAutocomplete(autoCompleteSelector);
+            }
+        });
+        
+        $('#save_submit2').click(function(){
+            var data = $('#person_form').serialize();
+            $(this).attr("disabled", true);
+        
+            $.ajax({
+                type: 'post',
+                url: '<?php echo $this->action; ?>',
+                data: data,
+                success: function(msg){
+                    if (msg == '') {
+                        window.location.reload();                                     
+                    } else {
+                        $('#save_submit').attr("disabled", false);
+                        $('#error_box').show();
+                        $('#error_box').children('div').html(msg);
+                    }               
+                }
+            
+            });
+            return false;
+        });
+    
+    }); 
+</script>
+
+<form id="person_form" method="POST" action="<?php echo $this->action;?>">
+    <?php echo $this->formHidden('id', $this->formdata['id'], array()); ?>
+    <?php echo $this->actionErrors() ?>
+    <ul>
+        <li id="error_box" style="display: none">
+            <div class="error_popup_box">
+
+            </div>
+        </li>
+        <li>
+            <label>Name</label>
+            <?php echo $this->formText('name', $this->formdata['name'], array()); ?>
+        </li>
+        <li>
+            <label>Surname</label>
+            <?php echo $this->formText('surname', $this->formdata['surname'], array()); ?>
+        </li>
+        <li>
+            <fieldset class="dynamicCollection addresses">
+                <legend>Addresses</legend>
+
+                <input type="button" class="addButton" value="Add new" style="display:none;"/>
+                <?php echo $this->partialLoop('person/_partialAddress.phtml', $this->formdata['addresses']) ?>
+            </fieldset>
+        </li>
+        <li>
+            <input id="save_submit" type="submit" value="Save" name="save" />
+        </li>
+        <li>
+            <input type="submit" value="Cancel" name="cancel" />
+        </li>
+    </ul>
+</form>
