@@ -1,7 +1,5 @@
 <?php
 
-require_once '../../bootstrap.php';
-
 class AlbumControllerTest extends Zend_Test_PHPUnit_ControllerTestCase
 {
 
