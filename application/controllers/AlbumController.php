@@ -28,23 +28,6 @@ class AlbumController extends Zend_Controller_Action {
         }
     }
 
-    public function add3Action() {
-        $form = new Application_Form_Album();
-        $form->submit->setLabel('Add');
-        $this->view->form = $form;
-
-        if ($this->getRequest()->isPost()) {
-            $formData = $this->getRequest()->getPost();
-            if ($form->isValid($formData)) {
-                $albums = new Application_Model_DbTable_Album();
-                $albums->insert($form->getValues());
-                $this->_helper->redirector('index');
-            } else {
-                $form->populate($formData);
-            }
-        }
-    }
-
     public function editAction() {
         $form = new Application_Form_Album();
         $form->submit->setLabel('Edit');

@@ -30,23 +30,12 @@ class PersonController extends Zend_Controller_Action {
         }
     }
 
-    public function add2Action() {
-        $this->view->mode = ADD_MODE;
-        $this->_helper->viewRenderer(self::VIEW_SCRIPT_NAME);
-        if ($this->getRequest()->isGet()) {
-            $this->_logger->log('addAction show mode', Zend_Log::ALERT);
-            $this->view->formdata = $this->_dbTable->getEmptyRow();
-        } else {
-            $this->_onSubmit();
-        }
-    }
-
     public function editAction() {
         $this->view->mode = UPDATE_MODE;
         $this->_helper->viewRenderer(self::VIEW_SCRIPT_NAME);
 
         if ($this->getRequest()->isGet()) {
-            $this->_logger->log('editAction show mode', Zend_Log::INFO);
+            $this->_logger->log('editAction show mode g', Zend_Log::INFO);
             $id = (int) $this->getRequest()->getParam('id', 0);
             $row = $this->_dbTable->getWithDependencies($id);
             $this->view->formdata = $row;
@@ -98,7 +87,7 @@ class PersonController extends Zend_Controller_Action {
         $formData['surname'] = $filterChain->filter($formData['surname']);
 
         if (!$validateNotEmpty->isValid($formData['name']))
-            $errors[] = 'Name' . self::IS_REQUIRED_TEXT;
+            $errors[] = 'Nameee' . self::IS_REQUIRED_TEXT;
 
         if (!$validateNotEmpty->isValid($formData['surname']))
             $errors[] = 'Surname' . self::IS_REQUIRED_TEXT;
