@@ -1,5 +1,5 @@
 <phpunit bootstrap="./bootstrap.php">
-<!--    <testsuites>
+    <testsuites>
         <testsuite name="Application Test Suite">
             <directory>./application/controllers</directory>
         </testsuite>
@@ -7,12 +7,12 @@
             <directory>./library</directory>
         </testsuite>
     </testsuites>
-    <filter>-->
+    <filter>
         <!-- If Zend Framework is inside your project's library, uncomment this filter -->
         <!-- 
         <whitelist>
             <directory suffix=".php">../../library/Zend</directory>
         </whitelist>
         -->
-    <!--</filter>-->
+    </filter>
 </phpunit>
