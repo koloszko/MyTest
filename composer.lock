@@ -1,13 +1,125 @@
 {
-    "hash": "674bd26c689d07e5fab4fcd374444e7f",
+    "hash": "42dcef7c44cf809a801411f58265b712",
     "packages": [
         {
-            "package": "breerly/zf1",
-            "version": "1.11.11"
+            "name": "breerly/zf1",
+            "version": "1.11.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/breerly/zf1",
+                "reference": "1.11.11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/breerly/zf1/zipball/1.11.11",
+                "reference": "1.11.11",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "time": "2012-05-31 13:45:44",
+            "bin": [
+                "bin/zf.php"
+            ],
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Zend_": "library/",
+                    "ZendX_": "extras/library/"
+                }
+            },
+            "include-path": [
+                "library/"
+            ],
+            "description": "Zend Framework 1",
+            "homepage": "https://github.com/breerly/zf1",
+            "keywords": [
+                "zend",
+                "Zend Framework",
+                "ZF1",
+                "zend framework 1",
+                "zf"
+            ]
         },
         {
-            "package": "tcpdf/tcpdf",
-            "version": "5.9.176"
+            "name": "company/commons",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/koloszko/commonTest",
+                "reference": "1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/koloszko/commonTest/zipball/1.0.0",
+                "reference": "1.0.0",
+                "shasum": ""
+            },
+            "time": "2012-10-09 12:36:09",
+            "type": "library",
+            "installation-source": "dist",
+            "support": {
+                "source": "https://github.com/koloszko/commonTest/tree/master",
+                "issues": "https://github.com/koloszko/commonTest/issues"
+            }
+        },
+        {
+            "name": "itbz/fpdf",
+            "version": "1.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itbz/fpdf.git",
+                "reference": "1.7.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/itbz/fpdf/zipball/1.7.1",
+                "reference": "1.7.1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2012-05-18 00:06:51",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "fpdf": "src/"
+                }
+            },
+            "description": "Unofficial PSR-0 compliant version of the FPDF library",
+            "homepage": "http://www.fpdf.org/"
+        },
+        {
+            "name": "itbz/fpdi",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itbz/fpdi.git",
+                "reference": "1.4.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/itbz/fpdi/zipball/1.4.2",
+                "reference": "1.4.2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "itbz/fpdf": "1.7.*"
+            },
+            "time": "2012-05-13 01:52:21",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "fpdi": "src/"
+                }
+            },
+            "description": "Unofficial PSR-0 compliant version of the FPDI library"
         }
     ],
     "packages-dev": null,

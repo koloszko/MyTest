@@ -1,6 +1,28 @@
 {
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "zend/zend",
+                "version": "1.12",
+                "dist": {
+                    "url": "http://packages.zendframework.com/releases/ZendFramework-1.12.0rc4/ZendFramework-1.12.0rc4-minimal.zip",
+                    "type": "zip"
+                },
+                "autoload": {
+                    "classmap": ["library/"]
+                }
+            }
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/koloszko/commonTest"
+        }
+    ],
     "require": {
         "breerly/zf1": "1.11.*",
-        "tcpdf/tcpdf": "5.9.*"
+        "itbz/fpdf": "1.7.1",
+        "itbz/fpdi": "1.4.2",
+        "company/commons": "1.0.0"
     }
 }
