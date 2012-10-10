@@ -1,21 +1,12 @@
 <?php
 
-class Application_Model_DbTable_Person extends Zend_Db_Table_Abstract {
+class Application_Model_DbTable_Person extends Commons_Model_DbTable_Generic {
 
     const ADDRESSES_KEY = 'addresses';
 
     protected $_name = 'persons';
     protected $_primary = 'id';
     private $_columns = array('name', 'surname');
-
-    public function get($id) {
-        $id = (int) $id;
-        $row = $this->fetchRow($this->_primary . '=' . $id);
-        if (!$row) {
-            throw new Exception("Could not find row $id");
-        }
-        return $row->toArray();
-    }
 
     public function getWithDependencies($id) {
         $row = $this->get($id);

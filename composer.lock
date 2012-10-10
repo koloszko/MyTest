@@ -1,25 +1,33 @@
 {
-    "hash": "101d274dbcd006c534599cf86af2d4d9",
+    "hash": "37b2b07df5ec56bc1d3fa88ce63115e4",
     "packages": [
         {
             "name": "company/commons",
-            "version": "1.0.8",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/koloszko/commonTest",
-                "reference": "1.0.8"
+                "reference": "1.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/koloszko/commonTest/zipball/1.0.8",
-                "reference": "1.0.8",
+                "url": "https://github.com/koloszko/commonTest/zipball/1.1.1",
+                "reference": "1.1.1",
                 "shasum": ""
             },
-            "time": "2012-10-10 10:49:46",
+            "time": "2012-10-10 13:02:06",
             "type": "library",
             "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Commons_": "library/"
+                }
+            },
+            "include-path": [
+                "library/"
+            ],
             "support": {
-                "source": "https://github.com/koloszko/commonTest/tree/1.0.8",
+                "source": "https://github.com/koloszko/commonTest/tree/1.1.1",
                 "issues": "https://github.com/koloszko/commonTest/issues"
             }
         },

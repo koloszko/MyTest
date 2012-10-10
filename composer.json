@@ -27,6 +27,6 @@
         "zend/zend": "1.12",
         "itbz/fpdf": "1.7.1",
         "itbz/fpdi": "1.4.2",
-        "company/commons": "1.0.8"
+        "company/commons": "1.1.1"
     }
 }
