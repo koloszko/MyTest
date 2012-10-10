@@ -7,5 +7,5 @@
         "psr-0" : {
             "Commons_" : "library/"
         }
-    },
+    }
 }
