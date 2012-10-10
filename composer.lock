@@ -1,67 +1,25 @@
 {
-    "hash": "42dcef7c44cf809a801411f58265b712",
+    "hash": "101d274dbcd006c534599cf86af2d4d9",
     "packages": [
         {
-            "name": "breerly/zf1",
-            "version": "1.11.11",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/breerly/zf1",
-                "reference": "1.11.11"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/breerly/zf1/zipball/1.11.11",
-                "reference": "1.11.11",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.4"
-            },
-            "time": "2012-05-31 13:45:44",
-            "bin": [
-                "bin/zf.php"
-            ],
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-0": {
-                    "Zend_": "library/",
-                    "ZendX_": "extras/library/"
-                }
-            },
-            "include-path": [
-                "library/"
-            ],
-            "description": "Zend Framework 1",
-            "homepage": "https://github.com/breerly/zf1",
-            "keywords": [
-                "zend",
-                "Zend Framework",
-                "ZF1",
-                "zend framework 1",
-                "zf"
-            ]
-        },
-        {
             "name": "company/commons",
-            "version": "1.0.0",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/koloszko/commonTest",
-                "reference": "1.0.0"
+                "reference": "1.0.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/koloszko/commonTest/zipball/1.0.0",
-                "reference": "1.0.0",
+                "url": "https://github.com/koloszko/commonTest/zipball/1.0.8",
+                "reference": "1.0.8",
                 "shasum": ""
             },
-            "time": "2012-10-09 12:36:09",
+            "time": "2012-10-10 10:49:46",
             "type": "library",
             "installation-source": "dist",
             "support": {
-                "source": "https://github.com/koloszko/commonTest/tree/master",
+                "source": "https://github.com/koloszko/commonTest/tree/1.0.8",
                 "issues": "https://github.com/koloszko/commonTest/issues"
             }
         },
@@ -120,6 +78,27 @@
                 }
             },
             "description": "Unofficial PSR-0 compliant version of the FPDI library"
+        },
+        {
+            "name": "zend/zend",
+            "version": "1.12",
+            "dist": {
+                "type": "zip",
+                "url": "http://packages.zendframework.com/releases/ZendFramework-1.12.0rc4/ZendFramework-1.12.0rc4-minimal.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Zend_": "library/",
+                    "ZendX_": "extras/library/"
+                }
+            },
+            "include-path": [
+                "library/"
+            ]
         }
     ],
     "packages-dev": null,
