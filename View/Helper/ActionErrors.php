@@ -5,7 +5,7 @@
  *
  * @author pawel
  */
-class Company_View_Helper_ActionErrors extends Zend_View_Helper_Abstract {
+class Commons_View_Helper_ActionErrors extends Zend_View_Helper_Abstract {
 
     public function actionErrors() {
         $result = '';
@@ -23,5 +23,3 @@ class Company_View_Helper_ActionErrors extends Zend_View_Helper_Abstract {
     }
 
 }
-
-?>

@@ -10,7 +10,7 @@
  *
  * @author pawel
  */
-class Company_View_Helper_LoggedInUser extends Zend_View_Helper_Abstract {
+class Commons_View_Helper_LoggedInUser extends Zend_View_Helper_Abstract {
 
     public function loggedInUser() {
         $result = '';
@@ -29,5 +29,3 @@ class Company_View_Helper_LoggedInUser extends Zend_View_Helper_Abstract {
     }
 
 }
-
-?>
