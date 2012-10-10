@@ -4,7 +4,7 @@
  *
  * @author Paweł
  */
-class Commons_Model_DbTable_Address extends Zend_Db_Table_Abstract {
+class Commons_Model_DbTable_Generic extends Zend_Db_Table_Abstract {
 
     public function get($id) {
         $id = (int) $id;

@@ -1,4 +1,10 @@
 {
     "name": "company/commons",
-    "version": "1.0.9"
+    "type": "library",
+    "include-path": ["library/"],
+    "autoload": {
+        "psr-0" : {
+            "Commons_" : "library/"
+        }
+    },
 }
