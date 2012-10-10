@@ -7,6 +7,7 @@ class AlbumController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
+        echo $this->_helper->cosTam('rtrtrtr');
         $albums = new Application_Model_DbTable_Album();
         $this->view->albums = $albums->fetchAll();
     }
