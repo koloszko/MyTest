@@ -7,6 +7,24 @@ class AlbumController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
+        echo var_dump(Zend_Locale::getDefault());
+        $locale = Zend_Registry::get('Zend_Locale');
+        $symbols = Zend_Locale_Data::getList($locale, 'symbols');
+        $var = Zend_Locale_Format::toNumber(12345.909);
+        echo $var;
+        echo str_replace($symbols['group'], '', $var);
+        echo '<br/>';
+        
+        $cena = '0,90';
+        //echo Zend_Locale_Format::getNumber($cena);
+        $v = new Zend_Validate_Float();
+        if (!$v->isValid($cena))
+            echo var_dump ($v->getErrors());
+        
+        $v1 = new Zend_Validate_GreaterThan(0);
+        $f = new Zend_Filter_LocalizedToNormalized();
+        if (!$v1->isValid($f->filter($cena)))
+            echo var_dump ($v1->getErrors());
         echo $this->_helper->cosTam('rtrtrtr');
         $albums = new Application_Model_DbTable_Album();
         $this->view->albums = $albums->fetchAll();

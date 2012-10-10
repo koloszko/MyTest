@@ -24,5 +24,10 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         $view = $this->getResource('view');
         $view->doctype('XHTML1_STRICT');
     }
+    protected function _initLocale() {
+        $locale = new Zend_Locale('pl_PL');
+        Zend_Registry::set('Zend_Locale', $locale);
+    }
+    
 }
 
