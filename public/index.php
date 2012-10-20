@@ -14,6 +14,7 @@ defined('APPLICATION_ENV')
 // Ensure library/ is on include_path
 set_include_path(implode(PATH_SEPARATOR, array(
     realpath(APPLICATION_PATH . '/../library'),
+    VENDOR_PATH,
     get_include_path(),
 )));
 
@@ -26,5 +27,11 @@ $application = new Zend_Application(
     APPLICATION_ENV,
     APPLICATION_PATH . '/configs/application.ini'
 );
+
+//require_once 'autoload.php';
+//spl_autoload_unregister(array(
+//    'Zend_Loader_Autoloader' , 'autoload'
+//));
+
 $application->bootstrap()
             ->run();

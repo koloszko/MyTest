@@ -23,7 +23,8 @@ $this->headTitle($this->title);
             }
         });
         
-        $('#save_submit2').click(function(){
+        $('#save_submit2').click(function(e){
+            e.preventDefault();
             var data = $('#person_form').serialize();
             $(this).attr("disabled", true);
         
@@ -33,9 +34,9 @@ $this->headTitle($this->title);
                 data: data,
                 success: function(msg){
                     if (msg == '') {
-                        window.location.reload();                                     
+                        window.location = '/zf-tutorial/public/person';                                     
                     } else {
-                        $('#save_submit').attr("disabled", false);
+                        $('#save_submit2').attr("disabled", false);
                         $('#error_box').show();
                         $('#error_box').children('div').html(msg);
                     }               
@@ -44,11 +45,23 @@ $this->headTitle($this->title);
             });
             return false;
         });
-    
+        $("input.openModal").click(function() {
+            var tag = $("#dialogHolder");
+            if(!tag.length)
+                tag = $("<div id='dialogHolder'></div>");
+            
+            $.ajax({
+                url: "add",
+                success: function(data) {
+                    tag.html(data).dialog({modal: true}).dialog('open');
+                }
+            });
+        });
     }); 
 </script>
 
-<form id="person_form" method="POST" action="<?php echo $this->action;?>">
+<form id="person_form" method="POST" action="<?php echo $this->action; ?>">
+    <input type="button" class="openModal" value="Open modal"/>
     <?php echo $this->formHidden('id', $this->formdata['id'], array()); ?>
     <?php echo $this->actionErrors() ?>
     <ul>
@@ -75,6 +88,7 @@ $this->headTitle($this->title);
         </li>
         <li>
             <input id="save_submit" type="submit" value="Save" name="save" />
+            <input id="save_submit2" type="submit" value="Save2" name="save" />
         </li>
         <li>
             <input type="submit" value="Cancel" name="cancel" />

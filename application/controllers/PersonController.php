@@ -67,10 +67,18 @@ class PersonController extends Zend_Controller_Action {
 
             if (empty($errors)) {
                 $this->_dbTable->save($formData);
-                $this->_helper->redirector('index');
+                if ($this->getRequest()->isXmlHttpRequest()) {
+                    $this->_helper->json('');
+                } else {
+                    $this->_helper->redirector('index');
+                }
             } else {
-                $this->view->actionErrors = $errors;
-                $this->view->formdata = $formData;
+                if ($this->getRequest()->isXmlHttpRequest()) {
+                    $this->_helper->json($errors);
+                } else {
+                    $this->view->actionErrors = $errors;
+                    $this->view->formdata = $formData;
+                }
             }
         }
     }
