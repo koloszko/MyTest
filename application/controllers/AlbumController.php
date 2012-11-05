@@ -14,17 +14,17 @@ class AlbumController extends Zend_Controller_Action {
         echo $var;
         echo str_replace($symbols['group'], '', $var);
         echo '<br/>';
-        
+
         $cena = '0,90';
         //echo Zend_Locale_Format::getNumber($cena);
         $v = new Zend_Validate_Float();
         if (!$v->isValid($cena))
-            echo var_dump ($v->getErrors());
-        
+            echo var_dump($v->getErrors());
+
         $v1 = new Zend_Validate_GreaterThan(0);
         $f = new Zend_Filter_LocalizedToNormalized();
         if (!$v1->isValid($f->filter($cena)))
-            echo var_dump ($v1->getErrors());
+            echo var_dump($v1->getErrors());
         echo $this->_helper->cosTam('rtrtrtr');
         $albums = new Application_Model_DbTable_Album();
         $this->view->albums = $albums->fetchAll();
@@ -84,6 +84,21 @@ class AlbumController extends Zend_Controller_Action {
             $albums = new Application_Model_DbTable_Album();
             $this->view->album = $albums->get($id);
         }
+    }
+
+    function pdfAction() {
+        $invoice = Zend_Pdf::load(APPLICATION_PATH . "/../data/kwestionariuszosobowy.pdf");
+        $page = $invoice->pages[0];
+
+        $font = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_TIMES);
+        $page->setFont($font, 12);
+
+        $page->drawText("Paweł Kołoszkooooo", 180, 721, 'WINDOWS-1250');
+$font2 = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_COURIER);
+$page->setFont($font2, 36)
+        ->drawText('Euro sign - €', 72, 720, 'UTF-8')
+        ->drawText('Text with ąęł - à è ì', 72, 650, 'UTF-8');
+        $invoice->save('C:\Tools\kwestionariuszosobowy.pdf');
     }
 
 }
